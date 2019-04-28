@@ -21,6 +21,9 @@ function createSprite(element) {
         return true;
       }
     },
+    isFinish: function() {
+      return !this.hasFrame();
+    },
     resetFrame: function() {
       this.element
         .removeClass(this.frames[this.currentFrame])
