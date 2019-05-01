@@ -34,10 +34,8 @@ function createSprite(element) {
       this.element.removeClass(from).addClass(to);
     },
     nextFrame: function() {
-      // console.log(this.currentFrame, this.lastFrame, this.frames);
       // defense
-      if (this.hasFrame()) {
-        this.resetFrame();
+      if (this.isFinish()) {
       } else {
         this.moveFrame(
           this.frames[this.currentFrame],
