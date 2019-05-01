@@ -2,14 +2,14 @@ var criaJogo = function(sprite) {
   return {
     sprite: sprite,
     palavra: null,
-    lacundas: null,
+    lacunas: null,
     etapas: [1, 2, 3],
     etapa: 1,
     numeroErros: 0,
     //Palavra
     setPalavraSecreta: function(palavra) {
       this.palavra = palavra;
-      this.lacundas = Array.apply(null, Array(palavra.length)).map(
+      this.lacunas = Array.apply(null, Array(palavra.length)).map(
         String.prototype.valueOf,
         ""
       );
@@ -23,14 +23,14 @@ var criaJogo = function(sprite) {
     },
     //Lacunas
     getLacunas: function() {
-      return this.lacundas;
+      return this.lacunas;
     },
     acabouLacunas: function() {
-      if (this.lacundas.length == 0) {
+      if (this.lacunas.length == 0) {
         return false;
       }
       var flag = true;
-      this.lacundas.forEach(element => {
+      this.lacunas.forEach(element => {
         if (element == "") {
           flag = false;
         }
@@ -44,7 +44,7 @@ var criaJogo = function(sprite) {
       palavra.forEach((element, index) => {
         if (element == letra) {
           flag = true;
-          this.lacundas[index] = letra;
+          this.lacunas[index] = letra;
         }
       });
 
@@ -71,7 +71,7 @@ var criaJogo = function(sprite) {
     },
     reinicia: function() {
       this.palavra = null;
-      this.lacundas = null;
+      this.lacunas = null;
       this.etapas = [1, 2, 3];
       this.etapa = 1;
       this.numeroErros = 0;
