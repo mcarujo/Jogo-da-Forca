@@ -54,7 +54,7 @@ var criaController = function(jogo) {
               : "Infelizmente você perdeu, tente novamente!"
           );
           reinicia();
-        }, 2000);
+        }, 500);
       }
     }
   };
